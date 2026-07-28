@@ -411,6 +411,13 @@
   padding: 24px;
   background-color: #FFF;
   position: relative;
+  cursor: pointer;
+}
+.service-section .service-box:hover {
+  box-shadow: 0 0 20px -12px #cb914f;
+}
+.service-section .service-box:hover img {
+  transform: scale(1.1);
 }
 .service-section .service-box .service-animation-wrapper {
   position: absolute;
@@ -585,6 +592,7 @@
 }
 .team-section .team-image-wrapper .team-block {
   position: relative;
+  overflow: hidden;
 }
 .team-section .team-image-wrapper .team-block .team-thumb {
   width: 100%;
@@ -620,6 +628,9 @@
 .team-section .team-image-wrapper .team-block:hover .team-content {
   opacity: 0.9;
   transition: 0.7s;
+}
+.team-section .team-image-wrapper .team-block:hover img {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 991px) {
   .team-section .team-content-wrapper {

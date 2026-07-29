@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="shortcut icon" href="./assets/img/favicon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/loader.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
@@ -17,7 +19,35 @@
     </style>
 </head>
 
-<body>
+<body class="is-loading">
+    <div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="Loading Nature">
+        <div class="site-loader__inner">
+            <div class="site-loader__orbital" aria-hidden="true">
+                <svg class="site-loader__ring" viewBox="0 0 220 220" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="siteLoaderRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#d5aa78" />
+                            <stop offset="50%" stop-color="#cb914f" />
+                            <stop offset="100%" stop-color="#9ab08c" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="site-loader__ring-track" cx="110" cy="110" r="96"></circle>
+                    <circle class="site-loader__ring-progress" cx="110" cy="110" r="96"></circle>
+                </svg>
+                <div class="site-loader__logo-wrap">
+                    <img class="site-loader__logo" src="./assets/img/logo.webp" alt="" width="152">
+                </div>
+                <div class="site-loader__particles" aria-hidden="true"></div>
+            </div>
+            <div class="site-loader__meta">
+                <div class="site-loader__line" aria-hidden="true">
+                    <span class="site-loader__line-fill"></span>
+                </div>
+                <p class="site-loader__text">Loading Nature...</p>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <nav class="top-nav py-2 d-none d-lg-block">
             <div class="container-wrapper">
@@ -47,39 +77,39 @@
             </div>
         </nav>
 
-        <div class="bottom-nav">
+        <div class="bottom-nav sticky">
             <div class="container-wrapper">
                 <nav class="d-flex align-items-center justify-content-between py-3">
-                    <a href="#">
+                    <a href="#home">
                         <img class="logo-main" src="./assets/img/logo.webp" width="190" height="" alt="Logo">
                     </a>
 
                     <ul class="navbar-nav d-none d-lg-flex flex-row align-items-center gap-4">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Home</a>
+                            <a href="#home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Mission</a>
+                            <a href="#mission" class="nav-link">Mission</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">About</a>
+                            <a href="#about" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Projects</a>
+                            <a href="#projects" class="nav-link">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Team</a>
+                            <a href="#team" class="nav-link">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Donate</a>
+                            <a href="#donate" class="nav-link">Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Events</a>
+                            <a href="#events" class="nav-link">Events</a>
                         </li>
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
-                        <a href="#" class="theme-btn btn">
+                        <a href="#donate" class="theme-btn btn">
                             Donate Now
                         </a>
 
@@ -95,7 +125,7 @@
         </div>
     </header>
 
-    <section class="banner-section">
+    <section class="banner-section" id="home">
         <div class="container-wrapper">
             <div class="banner-wrapper">
                 <div class="banner-content-wrapper">
@@ -104,7 +134,7 @@
                     <p class="banner-desc">Every animal plays an important role in maintaining nature's balance. Join us
                         in protecting endangered species, preserving habitats, and creating a safer future for wildlife.
                     </p>
-                    <a href="#" class="theme-btn btn">
+                    <a href="#mission" class="theme-btn btn">
                         Join the Mission
                     </a>
                 </div>
@@ -116,7 +146,7 @@
         </div>
     </section>
 
-    <section class="service-section section-padding">
+    <section class="service-section section-padding" id="mission">
         <div class="service-bg"></div>
         <div class="container">
             <div class="row gy-4">
@@ -167,7 +197,7 @@
         </div>
     </section>
 
-    <section class="save-life-section section-padding">
+    <section class="save-life-section section-padding" id="about">
         <div class="container-wrapper">
             <div class="section-content-wrapper">
                 <h2 class="section-sm-title">ABOUT OUR MISSION</h2>
@@ -177,7 +207,7 @@
                     to become responsible guardians of nature.</p>
                 <!-- <p class="section-desc">It is a long established fact that reader will be distracted by the readable
                     content of a page when looking at it layout using normal distribution opposed.</p> -->
-                <a href="#" class="theme-btn btn">Learn More</a>
+                <a href="#projects" class="theme-btn btn">Learn More</a>
             </div>
         </div>
         <div class="save-life-thumb-wrapper">
@@ -185,7 +215,7 @@
         </div>
     </section>
 
-    <section class="blog-section section-padding">
+    <section class="blog-section section-padding" id="projects">
         <div class="container">
             <div class="section-content-wrapper text-center mb-5">
                 <h1 class="section-title">Recent Conservation Projects</h1>
@@ -283,13 +313,13 @@
                     </div>
                 </div>
                 <div class="col-12 mt-5 text-center">
-                    <a href="#" class="theme-btn btn">Other's Causes</a>
+                    <a href="#projects" class="theme-btn btn">Other's Causes</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="team-section section-padding">
+    <section class="team-section section-padding" id="team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 team-image-wrapper">
@@ -342,7 +372,7 @@
                             <img src="./assets/img/section-line.webp" alt="Line">
                         </span>
                         <div>
-                            <a href="#" class="theme-btn btn">Join Our Team</a>
+                            <a href="#team" class="theme-btn btn">Join Our Team</a>
                         </div>
                     </div>
                 </div>
@@ -354,7 +384,7 @@
     </section>
 
 
-    <section class="donation-setting section-padding">
+    <section class="donation-setting section-padding" id="donate">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
@@ -396,14 +426,14 @@
                         </div>
                     </div>
                     <div class="mt-4 mt-lg-5">
-                        <a href="#" class="theme-btn btn">Donate Now</a>
+                        <a href="#donate" class="theme-btn btn">Donate Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="recent-event-section section-padding">
+    <section class="recent-event-section section-padding" id="events">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-6">
@@ -438,7 +468,7 @@
                                 </div>
                             </div>
                             <div class="flex-shrink-0">
-                                <a href="#" class="theme-btn btn">Join Event</a>
+                                <a href="#events" class="theme-btn btn">Join Event</a>
                             </div>
                         </div>
                     </div>
@@ -460,7 +490,7 @@
                                 </div>
                             </div>
                             <div class="flex-shrink-0">
-                                <a href="#" class="theme-btn btn">Join Event</a>
+                                <a href="#events" class="theme-btn btn">Join Event</a>
                             </div>
                         </div>
                         <div class="event-thumb-wrapper">
@@ -527,7 +557,7 @@
 
     <footer class="footer py-3">
         <div class="container-wrapper">
-            <div class="d-flex align-items-center justify-content-between gap-4 flex-wrap">
+            <div class="d-flex flex-column-reverse flex-md-row align-items-center justify-content-between gap-4 flex-wrap">
                 <div>
                     <p class="copy-right-txt mb-0">&copy; 2026 Vanest. All Rights Reserved.</p>
                 </div>
@@ -549,7 +579,7 @@
     </footer>
 
     <!-- Mobile nav -->
-    <div class="offcanvas mob-nav offcanvas-start" tabindex="-1" id="offcanvasExample"
+    <div class="offcanvas mob-nav offcanvas-start" tabindex="-1" id="offcanvasExample" data-lenis-prevent
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header p-0">
             <button type="button"
@@ -564,37 +594,37 @@
             <div class="mobile-menu-items">
                 <ul class="mob-nav navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#home" class="mob-link nav-link">
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#mission" class="mob-link nav-link">
                             Mission
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#about" class="mob-link nav-link">
                             About
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#projects" class="mob-link nav-link">
                             Projects
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#team" class="mob-link nav-link">
                             Team
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#donate" class="mob-link nav-link">
                             Donate
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="mob-link nav-link">
+                        <a href="#events" class="mob-link nav-link">
                             Events
                         </a>
                     </li>
@@ -618,7 +648,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="#" class="mob-nav-closer theme-btn btn w-100 p-2">
+                <a href="#donate" class="mob-nav-closer theme-btn btn w-100 p-2">
                     Donate Now
                 </a>
             </div>
@@ -627,20 +657,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 2,
-            spaceBetween: 5,
-            loop: true,
-            autoplay: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+    <script src="./assets/js/loader.js"></script>
+    <script src="./assets/js/animations.js"></script>
 </body>
 
 </html>
